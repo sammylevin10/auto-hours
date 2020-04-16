@@ -4,14 +4,23 @@
 //
 // So you can safely use jQuery (the `$`) in the code below
 
-'use strict';
+// 'use strict';
 
 var inputs;
 var debugString = "Nothing found";
-var times;
+var timesArray = new Array(1);
+
+
 
 function getFromPopup() {
-
+  var inputs = document.getElementsByTagName("*");
+  // console.log
+  // console.log("The algorithm found " + inputs.length + " input1s in your popup");
+  // timesArray[0] = inputs.value;
+  console.log(inputs.length);
+  for (let i = 0; i<inputs.length; i++) {
+    debugFill(i,"");
+  }
 }
 
 function save() {
@@ -39,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 console.log('The content script is running');
 
 setInterval(autoFill, 1000);
+setInterval(getFromPopup, 1000);
 
 function autoFill() {
   console.log('Autofilled!');
@@ -71,26 +81,16 @@ function debugFill(index, cell) {
 function debugSave() {
   localStorage.setItem("myData", "Success");
   console.log("You hit the save button");
+  getFromPopup();
   if (typeof(Storage) !== "undefined") {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = "This is stored locally.";
-    } else {
-      localStorage.clickcount = "Local storage was just created";
-    }
-  } else {
+      localStorage.times = timesArray;
+  }
+  else {
     console.log("Sorry, your browser does not support web storage...");
   }
 }
 
 function debugRetrieve() {
   console.log("You hit the autofill button");
-  if (typeof(Storage) !== "undefined") {
-    if (localStorage.clickcount) {
-    } else {
-      localStorage.clickcount = "Local storage was just created";
-    }
-  } else {
-    console.log("Sorry, your browser does not support web storage...");
-  }
-  console.log(localStorage.clickcount);
+  console.log(localStorage.times + " is the value saved from your first input");
 }
