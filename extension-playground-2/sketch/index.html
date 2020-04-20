@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>maze_challenge</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+
+    <script type="text/javascript" src="sketch.js"></script>
+  </head>
+  <body>
+    <h1>AutoHours for NYU MyTime</h1>
+    <table style="width:100%">
+      <tr>
+        <th>Weekday</th>
+        <th>Start</th>
+        <th>AM/PM</th>
+        <th>End</th>
+        <th>AM/PM</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td><input value = "5" id = "userinput"></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+        <td><input></input></td>
+        <td>
+          <select>
+            <option value="am">A.M.</option>
+            <option value="pm">P.M</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    </br>
+    <button onclick="fill()" id = "saveButton" value = "5">Save</button>
+    <button onclick="debugRetrieve()" id = "autoFillButton">AutoFill</button>
+  </body>
+</html>

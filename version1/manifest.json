@@ -1,0 +1,20 @@
+{
+  "name": "AutoHours for NYU MyTime",
+  "description": "Enter your scheduled hours just once, and autofill NYU MyTime timesheets",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "browser_action": {
+      "default_title": "Set this page's color.",
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "version": "0.1",
+  "content_scripts": [{
+    "matches": [ "https://nyumytime.wfsaas.com/*" ],
+    "js": ["jquery.js", "content_script.js"]
+  }]
+}
