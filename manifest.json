@@ -1,6 +1,6 @@
 {
-  "name": "Playground",
-  "description": "Enter your scheduled hours just once, and autofill NYU MyTime timesheets",
+  "name": "AutoHours for NYU MyTime",
+  "description": "Enter your scheduled hours just once, and autofill NYU MyTime timesheets. Click each autofilled input to confirm your selection.",
   "version": "1.0",
   "permissions": [
     "activeTab",
@@ -9,7 +9,8 @@
   ],
   "browser_action": {
       "default_title": "Set this page's color.",
-      "default_popup": "popup.html"
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
   },
   "manifest_version": 2,
   "version": "0.1",

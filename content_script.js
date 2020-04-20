@@ -4,6 +4,7 @@ strings = new Array(10);
 console.log("The content script has been invoked");
 retrieveData();
 
+// This function retrieves the packet from local storage
 function retrieveData() {
   try {
     console.log("retrieveData() was invoked");
@@ -17,6 +18,7 @@ function retrieveData() {
     }
 }
 
+// Extract the time ints from packet[0] and am/pm strings from packet[1] and assemble 10 strings of times into strings[]
 function generateStrings() {
   for (let i = 0; i<10; i++) {
     let number = packet[0][i];
@@ -28,14 +30,17 @@ function generateStrings() {
       console.log("null");
     }
     else {
-      let myString = Math.floor(number).toString() + ":00 " + packet[1][i];
-      strings[i] = myString;
-      console.log(myString);
+      let myString;
+      if (number<10) myString = "0" + Math.floor(number).toString() + ":00 " + packet[1][i];
+      else myString = Math.floor(number).toString() + ":00 " + packet[1][i];
+      strings[i] = myString.toString();
+      console.log(myString.toString());
     }
   }
   autoFill();
 }
 
+// Input each string from strings[] into its corresponding input on NYU MyTime
 function autoFill() {
   var iframe = document.getElementById("EntryFrame");
   inputs = iframe.contentWindow.document.getElementsByTagName("input");
@@ -52,9 +57,12 @@ function autoFill() {
   changeValue(24, strings[9]);
 }
 
+// Helper function to change the style and value of each input
 function changeValue(index, cell) {
   var iframe = document.getElementById("EntryFrame");
   inputs = iframe.contentWindow.document.getElementsByTagName("input");
-  inputs[index].style.background = "#ffcc99";
+  inputs[index].click();
+  inputs[index].style.background = "#73ffce";
   inputs[index].value = cell;
+  inputs[index].click();
 }

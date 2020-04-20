@@ -2,8 +2,7 @@ let inputs = new Array(10);
 let dropdowns = new Array(10);
 let packet = new Array(2);
 
-// THIS IS THE EVENT LISTENER AREA. LET THEM SLEEP. DO NOT DISTURB THEM
-
+// EventListeners are added to the save and autoFill buttons in the popup. Functions are assigned to each.
 document.addEventListener('DOMContentLoaded', function () {
   var saveButton = document.querySelector('#saveButton');
   saveButton.addEventListener('click', save);
@@ -14,16 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
   saveButton.addEventListener('click', autoFill);
 });
 
-// THIS IS THE EVENT LISTENER AREA. LET THEM SLEEP. DO NOT DISTURB THEM
-
+// LocalStorage is recalled immediately when the popup is opened. The user's hours will be already in the UI when it is opened.
 recall();
 
+// Invoke the content script to transfer and format the packet[][] to myTime website
 function autoFill() {
   chrome.tabs.executeScript({
     file: 'content_script.js'
   });
 }
 
+// Recall local storage packet and fill the inputs on the popup with whatever was last saved
 function recall() {
   console.log("Memory is recalled");
   chrome.storage.sync.get(['key'], function(result) {
@@ -40,6 +40,7 @@ function recall() {
   });
 }
 
+// Helper function to transfer data from the popup into packet[][] for easy storage
 function populateArrays() {
   for (let i = 1; i<11; i++) {
     let myId1 = "input"+i.toString();
@@ -51,6 +52,7 @@ function populateArrays() {
   packet[1] = dropdowns;
 }
 
+// Copy packet[][] to local storage
 function save() {
   console.log("You pressed the save button");
   populateArrays();
@@ -59,12 +61,3 @@ function save() {
           console.log('Value is set to ' + value);
   });
 }
-// 
-// function retrieve() {
-//   console.log("You pressed the autofill button");
-//   chrome.storage.sync.get(['key'], function(result) {
-//     console.log('Value currently is ' + result.key);
-//     let value = result.key;
-//     console.log(value[0][1]);
-//   });
-// }

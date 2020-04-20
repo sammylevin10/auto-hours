@@ -1,0 +1,68 @@
+/* CSS color variables, referenced throughout the stylesheet */
+:root {
+  --violet-very-light: #f0ebff;
+  --violet-light: #dbc9ff;
+  --violet-dark: #7c47b5;
+  --violet-very-dark: #4b118a;
+  --seafoam: #73ffce;
+}
+
+/* Body and header are formatted */
+body {
+  overflow: hidden;
+  background: var(--violet-light);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h1 {
+  color:white;
+  font-size:30px;
+  background: var(--violet-very-dark);
+  text-align: center;
+  margin:0px;
+  padding:0px;
+}
+
+/* Table is formatted */
+table {
+  border-collapse: collapse;
+  background:white;
+  border: 1px solid grey;
+}
+
+table, th, td {
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+
+tr:nth-child(even) {background-color: var(--violet-very-light);}
+
+tr:hover {background-color: var(--seafoam);}
+
+tr:nth-child(1) {
+  background-color: var(--violet-dark);
+  color: var(--violet-light);
+}
+
+/* Buttons are formatted */
+button {
+  background-color: var(--violet-very-dark);
+  border: none;
+  color: white;
+  padding: 7px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: var(--seafoam);
+  color: black;
+}
+
+#buttons {
+  position:relative;
+  left:35%;
+}

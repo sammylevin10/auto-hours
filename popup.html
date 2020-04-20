@@ -2,18 +2,13 @@
 <html>
   <head>
     <title>AutoHours for NYU MyTime</title>
-    <style>
-    body {
-      overflow: hidden;
-      margin: 20px;
-      padding: 0px;
-      background: white;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="popup.css">
     <script language="JavaScript" src="popup.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>AutoHours for NYU MyTime</h1>
+    </br>
     <table style="width:100%">
       <tr>
         <th>Weekday</th>
@@ -24,7 +19,7 @@
       </tr>
       <tr>
         <td>Monday</td>
-        <td><input value = "1" id = "input1"></input></td>
+        <td><input value = "" id = "input1"></input></td>
         <td>
           <select id = "dropdown1">
             <option value =""></option>
@@ -32,7 +27,7 @@
             <option value="pm">P.M</option>
           </select>
         </td>
-        <td><input value = "2" id = "input2"></input></td>
+        <td><input value = "" id = "input2"></input></td>
         <td>
           <select id = "dropdown2">
             <option value =""></option>
@@ -43,7 +38,7 @@
       </tr>
       <tr>
         <td>Tuesday</td>
-        <td><input value = "3" id = "input3"></input></td>
+        <td><input value = "" id = "input3"></input></td>
         <td>
           <select id = "dropdown3">
             <option value =""></option>
@@ -51,7 +46,7 @@
             <option value="pm">P.M</option>
           </select>
         </td>
-        <td><input value = "4" id = "input4"></input></td>
+        <td><input value = "" id = "input4"></input></td>
         <td>
           <select id = "dropdown4">
             <option value =""></option>
@@ -62,7 +57,7 @@
       </tr>
       <tr>
         <td>Wednesday</td>
-        <td><input value = "5" id = "input5"></input></td>
+        <td><input value = "" id = "input5"></input></td>
         <td>
           <select id = "dropdown5">
             <option value =""></option>
@@ -70,7 +65,7 @@
             <option value="pm">P.M</option>
           </select>
         </td>
-        <td><input value = "6" id = "input6"></input></td>
+        <td><input value = "" id = "input6"></input></td>
         <td>
           <select id = "dropdown6">
             <option value =""></option>
@@ -81,7 +76,7 @@
       </tr>
       <tr>
         <td>Thursday</td>
-        <td><input value = "7" id = "input7"></input></td>
+        <td><input value = "" id = "input7"></input></td>
         <td>
           <select id = "dropdown7">
             <option value =""></option>
@@ -89,7 +84,7 @@
             <option value="pm">P.M</option>
           </select>
         </td>
-        <td><input value = "8" id = "input8"></input></td>
+        <td><input value = "" id = "input8"></input></td>
         <td>
           <select id = "dropdown8">
             <option value =""></option>
@@ -100,7 +95,7 @@
       </tr>
       <tr>
         <td>Friday</td>
-        <td><input value = "9" id = "input9"></input></td>
+        <td><input value = "" id = "input9"></input></td>
         <td>
           <select id = "dropdown9">
             <option value =""></option>
@@ -108,7 +103,7 @@
             <option value="pm">P.M</option>
           </select>
         </td>
-        <td><input value = "10" id = "input10"></input></td>
+        <td><input value = "" id = "input10"></input></td>
         <td>
           <select id = "dropdown10">
             <option value =""></option>
@@ -119,7 +114,9 @@
       </tr>
     </table>
     </br>
-    <button id = "saveButton">Save</button>
-    <button id = "autoFillButton">AutoFill</button>
+    <div id = "buttons">
+      <button id = "saveButton">Save</button>
+      <button id = "autoFillButton">AutoFill</button>
+    </div>
   </body>
 </html>
