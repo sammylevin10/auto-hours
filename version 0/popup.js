@@ -15,7 +15,7 @@ debugScript();
 function debugScript() {
   chrome.tabs.executeScript({
     file: 'debug.js'
-  }); 
+  });
   hello(2);
 }
 
@@ -34,13 +34,15 @@ function save() {
   // chrome.tabs.executeScript(null,
   //     {code:"debugScript();"});
   // window.close();
-  debugScript();
-  console.log("ELEMENTS: " + document.getElementsByTagName("*").length);
+  // debugScript();
+  // console.log("ELEMENTS: " + document.getElementsByTagName("*").length);
+  console.log("You pressed the save button");
 }
 
 function retrieve() {
-  chrome.tabs.executeScript(null,
-      {code:"debugRetrieve()"});
+  console.log("You pressed the retrieve button");
+  // chrome.tabs.executeScript(null,
+  //     {code:"debugRetrieve()"});
   // window.close();
 }
 
@@ -48,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var saveButton = document.querySelector('#saveButton');
   saveButton.addEventListener('click', save);
 });
+
+getElementById("saveButton").addEventListener("click", save);
 
 document.addEventListener('DOMContentLoaded', function () {
   var autoFillButton = document.querySelector('#autoFillButton');

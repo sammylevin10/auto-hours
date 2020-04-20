@@ -12,6 +12,15 @@
     </style>
     <script src="popup.js"></script>
     <script src="debug.js"></script>
+    <!-- <script>
+    function save() {
+      console.log("Hello there");
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var saveButton = document.querySelector('#saveButton');
+      saveButton.addEventListener('click', save);
+    });
+    </script> -->
   </head>
   <body>
     <h1>AutoHours for NYU MyTime</h1>
@@ -110,7 +119,7 @@
       </tr>
     </table>
     </br>
-    <button onclick="save()" id = "saveButton">Save</button>
-    <button onclick="debugRetrieve()" id = "autoFillButton">AutoFill</button>
+    <button id = "saveButton">Save</button>
+    <button id = "autoFillButton">AutoFill</button>
   </body>
 </html>
